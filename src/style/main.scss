@@ -1,0 +1,354 @@
+@import "bootstrap";
+
+$theme-color : #FF9800;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', serif;
+  font-weight: normal;
+}
+.font-lighter{
+  font-family: 'Open Sans', serif;
+  font-weight: 100;
+}
+.font-light{
+  font-family: 'Open Sans', serif;
+  font-weight: light;
+}
+.font-regular{
+  font-family: 'Open Sans', serif;
+  font-weight: normal;
+}
+.font-bold{
+  font-family: 'Open Sans', serif;
+  font-weight: bold;
+}
+.font-bolder{
+  font-family: 'Open Sans', serif;
+  font-weight: bolder;
+}
+
+.watermark{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  // left: 50px;
+  color: #000;
+  @extend .font-bold;
+  opacity: .2;
+  z-index: 999;
+  font-size: 65px;
+  transform: rotate(-90deg);
+}
+
+.anchor-btn {
+  nav a {
+    position: relative;
+    display: inline-block;
+    margin: 30px 15px;
+    padding: 0 15px;
+    margin-left: 0px;
+    outline: none;
+    text-decoration: none;
+    color: $theme-color;
+    @extend .font-lighter;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  nav a:hover{
+    outline: none;
+  }
+  .cl-effect-18 {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cl-effect-18 a {
+    padding: 0 5px;
+    color: $theme-color;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+  }
+
+  .cl-effect-18 a::before,
+  .cl-effect-18 a::after {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    height: 1px;
+    margin-top: -1px;
+    background: $theme-color;
+    content: '';
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .cl-effect-18 a::before {
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  .cl-effect-18 a::after {
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  .cl-effect-18 a:hover{
+    color: $theme-color;
+  }
+
+  .cl-effect-18 a:hover::before,
+  .cl-effect-18 a:hover::after {
+    opacity: 0.7;
+  }
+
+  .cl-effect-18 a:hover::before{
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .cl-effect-18 a:hover::after{
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+.homepage {
+  .logo{
+    width: 90px;
+    top: 30px;
+    position: fixed;
+    left: 30px;
+    z-index: 9;
+  }
+  .intro-screen {
+    background-color: #191919;
+    color: #fff;
+    background :linear-gradient(60deg, #191919 60%, rgba(0, 0, 0, 0) 90%  ), url("https://www.roughguides.com/wp-content/uploads/2015/10/photo-1444583791700-0bd8d26df657-1680x1050.jpg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 250%;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #fff;
+    padding: 30px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 50px 200px;
+    position: relative;
+    .intro-box {
+      // position: absolute;
+      // top: 37%;
+      // left:  10%;
+      .intro-watermark {
+        @extend .font-light;
+        color: rgba(140, 140, 140, 0.10);
+        font-size: 65px;
+        margin-bottom: 0px;
+        text-transform: lowercase;
+      }
+      .intro {
+        .name {
+          font-size: 55px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+        .designation {
+          font-size: 22px;
+          margin-bottom: 0;
+          @extend .font-lighter;
+          letter-spacing: 12px;
+          text-transform: uppercase;
+        }
+        .place, p {
+          font-size: 18px;
+          margin-bottom: 0;
+          @extend .font-lighter;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .follow-box {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    color: $theme-color;
+    z-index: 999;
+    ul{
+      margin-top: -15px;
+      list-style: none;
+      -webkit-padding-start: 0px;
+      -moz-padding-start: 0px;
+      text-align: center;
+    }
+    ul li {
+      display: inline-block;
+      @extend .font-lighter;
+      font-size: 14px;
+      margin: 5px 10px;
+      letter-spacing: 1px;
+    }
+  }
+  .about-screen{
+    height: 100vh;
+    background: #000;
+    width: 100%;
+    padding: 60px 200px;
+    position: relative;
+    color: #000;
+    z-index: 99;
+    background :linear-gradient(60deg, #fff 60%, rgba(0, 0, 0, 0) 90%  ), url("https://www.roughguides.com/wp-content/uploads/2015/10/photo-1444583791700-0bd8d26df657-1680x1050.jpg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 250%;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    .about{
+      width: 650px;
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+// HAMBURGER MENU ===============================
+
+.hamburger {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 25px;
+  display: block;
+  z-index: 999;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+  &:hover{
+    opacity: 1;
+  }
+  span{
+    display: block;
+    float: left;
+    clear: both;
+    height: 1px;
+    color: #000;
+    background-color: $theme-color;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    &:nth-child(1){
+      width: 30px;
+      z-index: 9;
+    }
+    &:nth-child(2){
+      width: 15px;
+      margin-top: 8px;
+      ul , h1{
+        visibility: hidden;
+      }
+    }
+    &:nth-child(3){
+      width: 23px;
+      margin-top: 16px;
+    }
+  }
+}
+
+.hamburger-active{
+  span{
+    background-color: $theme-color;
+  }
+  span:nth-child(2){
+    overflow: visible;
+  }
+  span:nth-child(1), span:nth-child(3){
+    z-index: 100;
+    transform: rotate(45deg);
+  }
+  span:nth-child(1){
+    width: 30px;
+    transform: rotate(45deg) translateY(12px) translateX(12px);
+  }
+  span:nth-child(2){
+    height: 100vh;
+    width:100vw;
+    right: -30px;
+    top: -30px;
+    margin-top: 0;
+    background: #fff;  /* fallback for old browsers */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ul,h1{
+      visibility: visible;
+    }
+    h1{
+      color: rgba(0, 0, 0, 0.1);
+      font-size: 50px;
+      margin-right: -20px;
+      transform: rotate(-90deg);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    ul{
+      width: 320px;
+      margin: auto;
+      text-align: left;
+      list-style: none;
+      -webkit-padding-start: 0px;
+      -moz-padding-start: 0px;
+    }
+    ul li {
+      font-size: 25px;
+      letter-spacing: 10px;
+      @extend .font-lighter;
+      b {
+        letter-spacing: 10px;
+        @extend .font-bolder;
+        margin-right: -25px;
+        font-size: 45px;
+        color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    ul li:hover{
+      b{
+        transition: all 0.2s linear;
+        margin-right: 10px;
+      }
+    }
+
+  }
+  span:nth-child(3){
+    margin-top: 32px;
+    width: 30px;
+    transform: rotate(-45deg) translateY(-10px) translateX(10px);
+  }
+}
+
+
+// HAMBURGER MENU ===============================
