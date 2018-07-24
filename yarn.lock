@@ -4570,7 +4570,7 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
-lodash-es@^4.17.5:
+lodash-es@^4.0.0, lodash-es@^4.17.5:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
 
@@ -6097,6 +6097,15 @@ react-helmet@^5.2.0:
     object-assign "^4.1.1"
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
+
+react-leaflet@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-leaflet/-/react-leaflet-2.0.0.tgz#5ba2c3ddc69014e221c259b966cb1eb494b01611"
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    lodash "^4.0.0"
+    lodash-es "^4.0.0"
+    warning "^4.0.0"
 
 react-loadable@^5.4.0:
   version "5.4.0"
@@ -7643,7 +7652,7 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
-warning@^4.0.1:
+warning@^4.0.0, warning@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.1.tgz#66ce376b7fbfe8a887c22bdf0e7349d73d397745"
   dependencies:

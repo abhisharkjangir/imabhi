@@ -13,7 +13,7 @@ const IntroBox = (props) => {
           & currently working at Chimes Pvt. Ltd.
         </p>
         <div className="anchor-btn">
-          <nav className="cl-effect-18">
+          <nav className="cl-effect-11 text-white">
             <NavLink to="/" data-hover="Know More">Know More</NavLink>
           </nav>
         </div>

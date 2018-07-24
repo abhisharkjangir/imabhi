@@ -6703,81 +6703,49 @@ body {
 .watermark {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: -40px;
   color: #000;
   opacity: .2;
   z-index: 999;
   font-size: 65px;
   transform: rotate(-90deg); }
 
-.anchor-btn nav a {
-  position: relative;
-  display: inline-block;
-  margin: 30px 15px;
-  padding: 0 15px;
-  margin-left: 0px;
-  outline: none;
-  text-decoration: none;
-  color: #FF9800;
-  letter-spacing: 2px;
-  text-transform: uppercase; }
-
-.anchor-btn nav a:hover {
-  outline: none; }
-
-.anchor-btn .cl-effect-18 {
-  position: relative;
-  z-index: 1; }
-
-.anchor-btn .cl-effect-18 a {
-  padding: 0 5px;
-  color: #FF9800;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  transition: color 0.3s; }
-
-.anchor-btn .cl-effect-18 a::before,
-.anchor-btn .cl-effect-18 a::after {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 50%;
-  height: 1px;
-  margin-top: -1px;
-  background: #FF9800;
-  content: '';
-  z-index: -1;
-  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
-  transition: transform 0.3s, opacity 0.3s;
-  pointer-events: none; }
-
-.anchor-btn .cl-effect-18 a::before {
-  -webkit-transform: translateY(-20px);
-  -moz-transform: translateY(-20px);
-  transform: translateY(-20px); }
-
-.anchor-btn .cl-effect-18 a::after {
-  -webkit-transform: translateY(20px);
-  -moz-transform: translateY(20px);
-  transform: translateY(20px); }
-
-.anchor-btn .cl-effect-18 a:hover {
-  color: #FF9800; }
-
-.anchor-btn .cl-effect-18 a:hover::before,
-.anchor-btn .cl-effect-18 a:hover::after {
-  opacity: 0.7; }
-
-.anchor-btn .cl-effect-18 a:hover::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  transform: rotate(45deg); }
-
-.anchor-btn .cl-effect-18 a:hover::after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  transform: rotate(-45deg); }
+.anchor-btn {
+  /* Effect 11: text fill based on Lea Verou's animation http://dabblet.com/gist/6046779 */ }
+  .anchor-btn nav a {
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+    margin-left: 0px;
+    outline: none;
+    text-decoration: none;
+    color: #FF9800;
+    letter-spacing: 2px;
+    text-transform: uppercase; }
+  .anchor-btn nav a:hover {
+    outline: none; }
+  .anchor-btn .cl-effect-11 a {
+    padding: 10px 0;
+    color: #FF9800;
+    font-size: 18px;
+    text-shadow: none; }
+  .anchor-btn .cl-effect-11 a::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding: 10px 0;
+    max-width: 0;
+    border-bottom: 2px solid #FF9800;
+    color: #FF9800;
+    content: attr(data-hover);
+    -webkit-transition: max-width 0.5s;
+    -moz-transition: max-width 0.5s;
+    transition: max-width 0.5s;
+    white-space: nowrap; }
+  .anchor-btn .cl-effect-11 a:hover::before,
+  .anchor-btn .cl-effect-11 a:focus::before {
+    max-width: 100%; }
 
 .homepage .logo {
   width: 90px;
@@ -6801,7 +6769,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: left;
-  padding: 50px 200px;
+  padding: 50px 100px;
   position: relative; }
   .homepage .intro-screen .intro-box .intro-watermark {
     color: rgba(140, 140, 140, 0.1);
@@ -6845,7 +6813,7 @@ body {
   height: 100vh;
   background: #000;
   width: 100%;
-  padding: 60px 200px;
+  padding: 60px 100px;
   position: relative;
   color: #000;
   z-index: 99;
@@ -6862,21 +6830,23 @@ body {
       font-size: 20px; }
 
 .homepage .work-screen {
-  height: 100vh;
+  min-height: 100vh;
   color: #fff;
   width: 100%;
-  padding: 60px 200px;
+  padding: 60px 100px;
   position: relative;
   display: flex;
   align-items: center;
   background: linear-gradient(90deg, #191919 20px, transparent 1%) center, linear-gradient(#191919 20px, transparent 1%) center, #555;
-  background-size: 22px 22px; }
+  background-size: 22px 22px;
+  background-attachment: fixed; }
   .homepage .work-screen .work-list {
     display: flex;
     align-items: center;
     flex-wrap: wrap; }
   .homepage .work-screen .workcard {
-    width: 280px;
+    width: calc(83.3%/3);
+    height: auto;
     margin: 30px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
     position: relative; }
@@ -6919,3 +6889,63 @@ body {
       .homepage .work-screen .workcard .overlay:hover .number {
         transition: all 1s linear;
         display: none; }
+
+.homepage .skills-screen {
+  min-height: 100vh;
+  background: #fff;
+  width: 100%;
+  padding: 60px 100px;
+  position: relative;
+  color: #000;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 99; }
+  .homepage .skills-screen .skills-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column; }
+    .homepage .skills-screen .skills-list .what-i-do {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center; }
+      .homepage .skills-screen .skills-list .what-i-do .card {
+        margin: 15px;
+        padding: 15px;
+        width: 225px;
+        border-radius: 10px;
+        border: 0px solid #fff; }
+        .homepage .skills-screen .skills-list .what-i-do .card img {
+          width: 80px;
+          margin: auto;
+          margin-bottom: 15px; }
+        .homepage .skills-screen .skills-list .what-i-do .card h3 {
+          color: #dbdbdb;
+          font-size: 20px;
+          margin: auto; }
+    .homepage .skills-screen .skills-list .skills {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center; }
+      .homepage .skills-screen .skills-list .skills .card {
+        border-radius: 5px;
+        width: 225px;
+        border: 0px solid #555;
+        padding: 15px;
+        margin: 15px; }
+        .homepage .skills-screen .skills-list .skills .card img {
+          width: 90px;
+          margin: auto; }
+        .homepage .skills-screen .skills-list .skills .card img:hover {
+          transition: all .1s linear;
+          filter: grayscale(100%); }
+        .homepage .skills-screen .skills-list .skills .card h3 {
+          margin: auto;
+          margin-top: 20px;
+          font-size: 18px; }
